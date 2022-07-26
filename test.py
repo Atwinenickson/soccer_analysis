@@ -64,7 +64,6 @@ max_short_passing = df_players_new['short_passing'].max()
 max_volleys = df_players_new['volleys'].max()
 max_dribbling = df_players_new['dribbling'].max()
 max_curve = df_players_new['curve'].max()
-print(max_crossing)
 
 
 # MIN CROSSING
@@ -81,3 +80,14 @@ print(min_crossing)
 
 # print(df_leaguee['height'].mean())
 # print(df_leaguee['weight'].mean())
+
+
+
+# PROFILE FOR THE MAXIMUM
+max_ = df_players_new.loc[df_players_new['crossing'].idxmax()]
+print(max_)
+
+
+# PROFILE FOR THE MINIMUM
+min_ = df_players_new.loc[df_players_new['crossing'].idxmin()]
+print(min_)
