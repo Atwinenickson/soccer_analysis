@@ -65,3 +65,12 @@ def worst_player_category(category):
 worst_player = lambda : [print(worst_player_category(category)) for category in categories]
 worst_player()
 
+
+birthday = df_players.drop_duplicates(subset=['player_name'], keep='first')
+new_birthday = birthday.filter(['player_name','birthday'])
+
+# Players based on age group
+# Under20 = epl_df[epl_df['Age'] <=20]
+# age20_25 = epl_df[(epl_df['Age'] >20) & (epl_df['Age'] <= 25)]
+# age25_30 = epl_df[(epl_df['Age'] >25) & (epl_df['Age'] <=30)]
+# Above30 = epl_df[epl_df['Age'] > 30]
