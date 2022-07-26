@@ -13,12 +13,15 @@ df_players_new = df_players.drop_duplicates(subset=['player_name'], keep='first'
 
 df_players_categories = df_players_new.drop(df_players.columns[[0, 1, 2, 3, 4,  7, 8, 9, 10,  13, 14, 15]], axis=1)
 
+df_players_new = df_players_new.drop(df_players.columns[[0, 1, 3, 4,  7, 8, 9, 10,  13, 14, 15]], axis=1)
+
 categories = df_players_categories.columns.values.tolist()
 print(categories)
 
 # Max per category
 def max_rating(category):
     max_rating_category = df_players_new[category].max()
+    print(f"Best rating for category {category}")
     return max_rating_category
 
 
@@ -31,6 +34,7 @@ print('..............................')
 # Min per category
 def min_rating(category):
     min_rating_category = df_players_new[category].min()
+    print(f"Worst rating for category {category}")
     return min_rating_category
 
 
@@ -43,7 +47,8 @@ print('..............................')
 # BEST PLAYER
 def best_player_category(category):
     best_player = df_players_new[df_players_new[category]== df_players_new[category].max()]
-    return best_player['player_name']
+    print(f"Best player for category {category}")
+    return best_player
 
 
 best_player = lambda : [print(best_player_category(category)) for category in categories]
@@ -54,7 +59,8 @@ print('..............................')
 # WORST PLAYER
 def worst_player_category(category):
     worst_player = df_players_new[df_players_new[category]== df_players_new[category].min()]
-    return worst_player['player_name']
+    print(f"Worst player for category {category}")
+    return worst_player
 
 worst_player = lambda : [print(worst_player_category(category)) for category in categories]
 worst_player()
