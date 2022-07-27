@@ -70,3 +70,18 @@ import pandas as pd
 # teams_draw = head_to_head[head_to_head['home_team_goal'] == head_to_head['away_team_goal']]
 # print(teams_draw.head())
 # teams_draw.to_csv('draw_teams.csv')
+
+
+# HOME TEAM SEASONAL PERFORMANCE
+# head_to_head = pd.read_csv('head_to_head_matches.csv')
+# home_teams_per_season_max = head_to_head.groupby(['home_team', 'season'])['home_team_goal'].max().reset_index()
+# home_teams_per_season_min = head_to_head.groupby(['home_team', 'season'])['home_team_goal'].min().reset_index()
+# print(home_teams_per_season_max.head())
+# print(home_teams_per_season_min.head())
+
+# AWAY TEAM SEASONAL PERFORMANCE
+# head_to_head = pd.read_csv('head_to_head_matches.csv')
+# away_teams_per_season_max = head_to_head.groupby(['away_team', 'season'])['away_team_goal'].max().reset_index()
+# away_teams_per_season_min = head_to_head.groupby(['away_team', 'season'])['away_team_goal'].min().reset_index()
+# print(away_teams_per_season_max.head())
+# print(away_teams_per_season_min.head())
