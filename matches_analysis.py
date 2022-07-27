@@ -85,3 +85,10 @@ import pandas as pd
 # away_teams_per_season_min = head_to_head.groupby(['away_team', 'season'])['away_team_goal'].min().reset_index()
 # print(away_teams_per_season_max.head())
 # print(away_teams_per_season_min.head())
+
+# TEAMS THAT PLAYED EACH OTHER SEASONALY
+# HOME TEAM SEASONAL PERFORMANCE
+head_to_head = pd.read_csv('head_to_head_matches.csv')
+seasonal_games = head_to_head.groupby(['home_team', 'away_team', 'season', 'home_team_goal', 'away_team_goal'])['home_team_goal', 'away_team_goal'].apply(list)
+print(seasonal_games.head())
+seasonal_games.to_csv('seasonal_games.csv')
