@@ -69,3 +69,11 @@ df_away = pd.read_csv('away_team_matches.csv')
 # print(concantd.head())
 
 # df_head_to_head = concantd.to_csv('head_to_head_matches.csv')
+
+head_to_head = pd.read_csv('head_to_head_matches.csv')
+
+total_home_goals = head_to_head['home_team_goal'].sum()
+print(total_home_goals)
+
+total_away_goals = head_to_head['away_team_goal'].sum()
+print(total_away_goals)
