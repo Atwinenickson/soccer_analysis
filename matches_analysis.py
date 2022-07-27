@@ -88,7 +88,31 @@ import pandas as pd
 
 # TEAMS THAT PLAYED EACH OTHER SEASONALY
 # HOME TEAM SEASONAL PERFORMANCE
-head_to_head = pd.read_csv('head_to_head_matches.csv')
-seasonal_games = head_to_head.groupby(['home_team', 'away_team', 'season', 'home_team_goal', 'away_team_goal'])['home_team_goal', 'away_team_goal'].apply(list)
-print(seasonal_games.head())
-seasonal_games.to_csv('seasonal_games.csv')
+# head_to_head = pd.read_csv('head_to_head_matches.csv')
+# seasonal_games = head_to_head.groupby(['home_team', 'away_team', 'season', 'home_team_goal', 'away_team_goal'])['home_team_goal', 'away_team_goal'].apply(list)
+# print(seasonal_games.head())
+# seasonal_games.to_csv('seasonal_games.csv')
+
+
+# head_to_head = pd.read_csv('head_to_head_matches.csv')
+# home_seasonal_games = head_to_head.groupby(['home_team', 'season'])['home_team_goal'].sum().reset_index(name='total_home_goals')
+# away_seasonal_games = head_to_head.groupby(['away_team', 'season'])['away_team_goal'].sum().reset_index(name='total_away_goals')
+# print(home_seasonal_games.head())
+# print(away_seasonal_games.head())
+
+
+# TOTAL GOALS PER SEASON
+# home_seasonal_games['TotalGoals'] = home_seasonal_games['total_home_goals'] + away_seasonal_games['total_away_goals']
+# print(home_seasonal_games.head())
+# home_seasonal_games.to_csv('total_goals_per_season.csv')
+
+# Maximum goals all seasons
+# maxim_goals = pd.read_csv('total_goals_per_season.csv')
+# maxim_goals_scored = maxim_goals['TotalGoals'].max()
+# print(maxim_goals_scored)
+
+# Team with most goals
+# print(maxim_goals[maxim_goals['TotalGoals'] == maxim_goals['TotalGoals'].max()])
+
+# Team with most home goals
+# print(maxim_goals[maxim_goals['total_home_goals'] == maxim_goals['total_home_goals'].max()])
