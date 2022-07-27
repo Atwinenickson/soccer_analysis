@@ -52,28 +52,3 @@ import sqlite3
 
 # df_players.to_csv('away_team_matches.csv', index=False)
 
-
-df_home = pd.read_csv('home_team_matches.csv')
-df_away = pd.read_csv('away_team_matches.csv')
-# print(df_home.head())
-# print(df_away.head())
-
-# print(df_home.head(2))
-# print(df_away.head(2))
-
-# df_away.drop(['season', 'stage', 'date'], axis=1, inplace=True)
-# print(df_away.head())
-
-
-# concantd = df_home.join(df_away)
-# print(concantd.head())
-
-# df_head_to_head = concantd.to_csv('head_to_head_matches.csv')
-
-head_to_head = pd.read_csv('head_to_head_matches.csv')
-
-total_home_goals = head_to_head['home_team_goal'].sum()
-print(total_home_goals)
-
-total_away_goals = head_to_head['away_team_goal'].sum()
-print(total_away_goals)
