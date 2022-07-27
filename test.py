@@ -69,8 +69,21 @@ worst_player()
 birthday = df_players.drop_duplicates(subset=['player_name'], keep='first')
 new_birthday = birthday.filter(['player_name','birthday'])
 
+
+# This function converts given date to age
+def age(born):
+#     born = datetime.strptime(born, "%d/%m/%Y").date()
+    born = datetime.strptime(born, '%Y-%m-%d %H:%M:%S').date()
+    today = date.today()
+    return today.year - born.year - ((today.month, 
+                                      today.day) < (born.month, 
+                                                    born.day))
+
+
 # Players based on age group
-# Under20 = epl_df[epl_df['Age'] <=20]
-# age20_25 = epl_df[(epl_df['Age'] >20) & (epl_df['Age'] <= 25)]
-# age25_30 = epl_df[(epl_df['Age'] >25) & (epl_df['Age'] <=30)]
-# Above30 = epl_df[epl_df['Age'] > 30]
+new_birthday['Age'] = new_birthday['birthday'].apply(age)
+
+Under20 = new_birthday[new_birthday['Age'] <=20]
+age20_30 = new_birthday[(new_birthday['Age'] >20) & (new_birthday['Age'] <= 30)]
+age30_40 = new_birthday[(new_birthday['Age'] >30) & (new_birthday['Age'] <=40)]
+Above40 = new_birthday[new_birthday['Age'] > 40]
