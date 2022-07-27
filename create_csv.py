@@ -58,10 +58,14 @@ df_away = pd.read_csv('away_team_matches.csv')
 # print(df_home.head())
 # print(df_away.head())
 
-print(df_home.shape)
-print(df_away.shape)
+# print(df_home.head(2))
+# print(df_away.head(2))
 
-concantd = pd.merge(df_home, df_away,  how="outer")
-print(concantd.head())
+# df_away.drop(['season', 'stage', 'date'], axis=1, inplace=True)
+# print(df_away.head())
 
-df_head_to_head = concantd.to_csv('head_to_head_matches.csv')
+
+# concantd = df_home.join(df_away)
+# print(concantd.head())
+
+# df_head_to_head = concantd.to_csv('head_to_head_matches.csv')
