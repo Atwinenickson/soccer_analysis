@@ -51,3 +51,22 @@ import pandas as pd
 # TEAMs THAT SCORED LESS GOALS
 # team_min_goals =  pd.read_csv('less_goals_per_team.csv')
 # print(team_min_goals[team_min_goals.min_goal == team_min_goals.min_goal.min()])
+
+
+# HOME TEAMS THAT WON(AWAY TEAMS THAT LOST)
+# head_to_head = pd.read_csv('head_to_head_matches.csv')
+# teams_won = head_to_head[head_to_head['home_team_goal'] > head_to_head['away_team_goal']]
+# print(teams_won.head())
+# teams_won.to_csv('win_teams.csv')
+
+# HOME TEAMS THAT LOST(AWAY TEAMS THAT WON)
+# head_to_head = pd.read_csv('head_to_head_matches.csv')
+# teams_lost = head_to_head[head_to_head['home_team_goal'] < head_to_head['away_team_goal']]
+# print(teams_lost.head())
+# teams_lost.to_csv('loss_teams.csv')
+
+# TEAMS THAT DREW(NO TEAM WON)
+# head_to_head = pd.read_csv('head_to_head_matches.csv')
+# teams_draw = head_to_head[head_to_head['home_team_goal'] == head_to_head['away_team_goal']]
+# print(teams_draw.head())
+# teams_draw.to_csv('draw_teams.csv')
